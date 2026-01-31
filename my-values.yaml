@@ -1,0 +1,21 @@
+auth:
+  postgresPassword: "postgres123"
+  username: "myuser"
+  password: "mypassword"
+  database: "mydb"
+  replicationPassword: "replication123"
+  secretKeys:
+    adminPasswordKey: test_admin
+    userPasswordKey: test
+    replicationPasswordKey: test
+  usePasswordFiles: true
+
+architecture: replication
+
+primary:
+  persistence:
+    size: 1Gi
+
+readReplicas:
+  persistence:
+    size: 1Gi

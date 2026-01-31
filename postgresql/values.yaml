@@ -177,15 +177,15 @@ auth:
   ## @param auth.secretKeys.replicationPasswordKey Name of key in existing secret to use for PostgreSQL credentials. Only used when `auth.existingSecret` is set.
   ##
   secretKeys:
-    adminPasswordKey: postgres-password
-    userPasswordKey: password
-    replicationPasswordKey: replication-password
+    adminPasswordKey: test_admin
+    userPasswordKey: test
+    replicationPasswordKey: test
   ## @param auth.usePasswordFiles Mount credentials as a files instead of using an environment variable
   ##
   usePasswordFiles: true
 ## @param architecture PostgreSQL architecture (`standalone` or `replication`)
 ##
-architecture: standalone
+architecture: replication
 ## Replication configuration
 ## Ignored if `architecture` is `standalone`
 ##
@@ -1474,7 +1474,7 @@ backup:
 passwordUpdateJob:
   ## @param passwordUpdateJob.enabled Enable password update job
   ##
-  enabled: false
+  enabled: true
   ## @param passwordUpdateJob.backoffLimit set backoff limit of the job
   ##
   backoffLimit: 10
